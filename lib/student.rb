@@ -1,16 +1,11 @@
 require_relative '../lib/user'
 
 class Student < User
-  def initialize(first_name, last_name)
-    super(first_name, last_name)
-    @knowledge = []
+  attr_accessor :knowledge
+  def initialize
+      @knowledge=[]
   end
-
-  def learn(string)
-    @knowledge << string
-  end
-
-  def knowledge
-    @knowledge
+  def learn lesson
+      @knowledge << lesson
   end
 end
